@@ -9,10 +9,11 @@ enum EnumReparentOrder {
 const _INT_MODULO_8_BIT : int = 256
 
 
-static func _get_int_random(int_seed : int) -> int:
-	# Randomize every time to minimize the risk of collisions
+func _init() -> void:
 	randomize()
 
+
+static func _get_int_random(int_seed : int) -> int:
 	return randi() % int_seed
 
 
@@ -59,8 +60,6 @@ static func delete_node_children(node) -> void:
 
 
 static func get_float_random(float_min : float, float_max : float) -> float:
-	randomize()
-	
 	return randf() * float_max + float_min
 
 
